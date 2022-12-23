@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import InputField from "./components/InputField";
 import {Todo} from "./model";
+import TodoList from "./components/TodoList";
 
 function App() {
     const [todo, setTodo]: [string, ((value: (((prevState: string) => string) | string)) => void)] = useState("");
@@ -16,10 +17,7 @@ function App() {
     <div className="App">
         <span className={"heading"}>Taskify</span>
         <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd}/>
-        {/*<TodoList/>*/}
-        {todos.map((todo)=>(
-            <li>{todo.todo}</li>
-            ))}
+        <TodoList todos={todos} setTodos={setTodos}/>
     </div>
   );
 }
